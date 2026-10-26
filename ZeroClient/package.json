@@ -1,0 +1,34 @@
+{
+  "name": "zeroclient-launcher",
+  "version": "0.1.0",
+  "description": "ZeroClient neon Minecraft launcher UI prototype",
+  "main": "src/main.cjs",
+  "author": "ZeroClient",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "fun.zeroclient.launcher",
+    "productName": "ZeroClient",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
